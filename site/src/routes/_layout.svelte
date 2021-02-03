@@ -1,8 +1,8 @@
-<script lang="ts">
-  import { setContext } from 'svelte';
-  import { ITheme } from 'byocss';
+<script context="module" lang="ts">
+  import { theme as themeStore } from 'byocss';
   import theme from '../byocss.config';
-  setContext<ITheme>('byocss-theme', theme);
+  console.log('setting theme in store', theme);
+  themeStore.set(theme);
 </script>
 
 <!--TODO Create Nav control for consumption here-->

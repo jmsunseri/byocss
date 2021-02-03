@@ -1,24 +1,37 @@
-<script lang="ts">
-  import { getContext } from 'svelte';
-  import type { IButtonTheme, ITheme } from './models';
+<script context="module" lang="ts">
+  import { theme as themeStore } from './store';
   import { toStyle } from './utils';
-  const theme: ITheme = getContext('byocss-theme');
-  export let style: string = 'primary';
-  export let css: string = '';
-  const buttonTheme: IButtonTheme = theme.buttons[style];
-  let button: string = 'btn';
-  let icon: string;
+  type ButtonCollection = { [key: string]: { icon: string; style: string } };
 
-  $: {
-    button = `${toStyle({
-      ...buttonTheme,
-      icon: undefined,
-    })} ${css}`;
-    icon = toStyle(buttonTheme.icon);
-  }
+  // according to the documentation this module will only be evaluated once when the component is initialized
+  // and not each time the component is rendered.  this seems ideal for loading the theme so long as we don't
+  // want to enable hot swapping themes for the time being if someone wants to have multiple themes they can define
+  // multiple style buttons once for each theme instead of compeletly new theme structures
+
+  let buttons: ButtonCollection;
+
+  themeStore.subscribe((theme) => {
+    buttons = Object.keys(theme.buttons).reduce(
+      (current: ButtonCollection, key: string) => ({
+        ...current,
+        [key]: {
+          style: toStyle({ ...theme.buttons[key], icon: undefined }),
+          icon: toStyle(theme.buttons[key].icon),
+        },
+      }),
+      {}
+    );
+  });
 </script>
 
-<button class={button} on:click>
+<script lang="ts">
+  export let style: string = 'default';
+  export let css: string = '';
+  const button = buttons[style]?.style || '';
+  const icon = button[style]?.icon || '';
+</script>
+
+<button class={`${button} ${css}`} on:click>
   {#if $$slots.icon}
     <div class={icon}>
       <slot name="icon" />

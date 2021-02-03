@@ -13,11 +13,11 @@ const primaryButton = {
 
 const theme: ITheme = {
   buttons: {
-    primary: {
+    default: {
       ...primaryButton,
       icon: {},
     },
-    primaryDense: {
+    dense: {
       ...primaryButton,
       spacing: 'p-1',
       icon: {},

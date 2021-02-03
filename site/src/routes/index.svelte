@@ -60,11 +60,11 @@
 
   <pre>
 		<code>
-			{`<Button style="primary" >I'm a Button</Button>`}
+			{`<Button style="default" >I'm a Button</Button>`}
 		</code>
 	</pre>
 
   <div class="flex">
-    <Button style="primary">I'm a Button</Button>
+    <Button style="default">I'm a Button</Button>
   </div>
 </div>

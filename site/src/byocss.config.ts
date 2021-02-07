@@ -23,6 +23,10 @@ const theme: ITheme = {
       icon: {},
     },
   },
+  linkButtons: {
+    default: { style: 'text-white hover:text-green-300' },
+    active: { style: 'text-green-300' },
+  },
 };
 
 export default theme;

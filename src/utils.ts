@@ -1,5 +1,7 @@
-const toStyle = (theme: object | string): string => {
-  if (typeof theme === 'string') {
+const toStyle = (theme?: object | string): string => {
+  if (!theme) {
+    return '';
+  } else if (typeof theme === 'string') {
     return theme.trim();
   } else {
     if (Array.isArray(theme)) {
@@ -26,6 +28,7 @@ const toStyle = (theme: object | string): string => {
         }
       }, '');
     }
+    return '';
   }
 };
 

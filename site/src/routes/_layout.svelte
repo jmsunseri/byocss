@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
   import { theme as themeStore, LinkButton } from 'byocss';
   import theme from '../byocss.config';
-  console.log('setting theme in store', theme);
   themeStore.set(theme);
 </script>
 
@@ -17,10 +16,8 @@
   BYOCSS (Bring Your Own CSS) Svelte Components
 </div>
 
-<div class="grid grid-cols-12 h-screen">
-  <div
-    class="col-span-0 md:col-span-2 text-white md:visible invisible bg-gray-600 p-4 flex flex-col"
-  >
+<div class="h-screen flex flex-row">
+  <div class="w-80 text-white md:flex hidden bg-gray-600 p-4 flex-col">
     Components:
     <div class="flex flex-col pl-4">
       <LinkButton
@@ -35,7 +32,7 @@
       >
     </div>
   </div>
-  <div class="md:col-span-10 col-span-12 p-4">
+  <div class="w-full p-4">
     <main>
       <slot />
     </main>

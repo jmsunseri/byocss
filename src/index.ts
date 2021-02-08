@@ -1,8 +1,7 @@
+import type { ITextTheme, IButtonTheme, ILinkButtonTheme } from './components';
+import { Button, LinkButton, Text } from './components';
 import type { ITheme } from './models';
-import { Button } from './components/Button';
-import type { IButtonTheme } from './components/Button';
-import type { ILinkButtonTheme } from './components/LinkButton';
-import { LinkButton } from './components/LinkButton';
+
 import { theme } from './store';
-export type { ITheme, IButtonTheme, ILinkButtonTheme };
-export { Button, theme, LinkButton };
+export type { ITheme, IButtonTheme, ILinkButtonTheme, ITextTheme };
+export { Button, theme, LinkButton, Text };

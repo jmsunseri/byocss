@@ -27,6 +27,7 @@
 <script lang="ts">
   export let style: string = 'default';
   export let css: string = '';
+  export let disabled: boolean = false;
   let button: string = '';
   let icon: string = '';
   $: {
@@ -35,7 +36,7 @@
   }
 </script>
 
-<button class={`${button} ${css}`} on:click>
+<button class={`${button} ${css}`.trim()} {disabled} on:click>
   {#if $$slots.icon}
     <span class={icon}>
       <slot name="icon" />

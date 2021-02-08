@@ -5,11 +5,6 @@
     [key: string]: { style: string; icon: string };
   };
 
-  // according to the documentation this module will only be evaluated once when the component is initialized
-  // and not each time the component is rendered.  this seems ideal for loading the theme so long as we don't
-  // want to enable hot swapping themes for the time being if someone wants to have multiple themes they can define
-  // multiple style buttons once for each theme instead of compeletly new theme structures
-
   let linkButtons: LinkButtonCollection;
 
   themeStore.subscribe((theme) => {
@@ -47,7 +42,7 @@
 </script>
 
 {#if !sapperNoScroll}
-  <a {href} on:click {disabled} class={linkButton}>
+  <a {href} on:click {disabled} class={`${linkButton} ${css}`.trim()}>
     {#if $$slots.icon}
       <span class={icon}>
         <slot name="icon" />
@@ -61,7 +56,13 @@
     {/if}
   </a>
 {:else}
-  <a {href} on:click sapper:noscroll {disabled} class={linkButton}>
+  <a
+    {href}
+    on:click
+    sapper:noscroll
+    {disabled}
+    class={`${linkButton} ${css}`.trim()}
+  >
     {#if $$slots.icon}
       <span class={icon}>
         <slot name="icon" />

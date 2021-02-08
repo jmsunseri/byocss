@@ -2537,6 +2537,11 @@ svelte@^3.17.3:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
   integrity sha512-j1KmD2ZOU0RGq1/STDXjwfh0/eJ/Deh2NXyuz1bpR9eOcz9yImn4CGxXdbSAN7cMTm9a7IyPUIbuBCzu/pXK0g==
 
+tabler-icons-svelte@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/tabler-icons-svelte/-/tabler-icons-svelte-1.6.0.tgz#76b1ff6e879e9edbdea69c0a1501693873d008d8"
+  integrity sha512-ax/DXbs9pmtdsqholqSY2hQCTrvWloQQwg8EozwIYKqUwDkqx6MgSU/N6d2rVAJMnM5KdxThqF019NfoOn9L9g==
+
 tailwindcss@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.0.2.tgz#28e1573d29dd4547b26782facb05bcfaa92be366"

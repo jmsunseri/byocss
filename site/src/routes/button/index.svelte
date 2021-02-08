@@ -45,6 +45,7 @@
 import { DeviceFloppy, Trash } from 'tabler-icons-svelte';
 
 <div class="flex flex-row gap-3">
+  <Button>No Icon</Button>
   <Button>
     Save
     <span slot="trailingIcon">
@@ -53,10 +54,11 @@ import { DeviceFloppy, Trash } from 'tabler-icons-svelte';
   </Button>
   <Button>
     Delete
-    <span slot="trailingIcon">
+    <span slot="icon">
       <Trash size="1.5rem" />
     </span>
   </Button>
+  <Button disabled style="disabled">Disabled</Button>
 </div>`;
 </script>
 

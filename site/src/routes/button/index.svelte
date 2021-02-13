@@ -6,7 +6,7 @@
 
   let props: IProp[] = [
     {
-      name: 'style',
+      name: 'variant',
       type: 'string',
       default: "'default'",
       description:
@@ -58,7 +58,7 @@ import { DeviceFloppy, Trash } from 'tabler-icons-svelte';
       <Trash size="1.5rem" />
     </span>
   </Button>
-  <Button disabled style="disabled">Disabled</Button>
+  <Button disabled variant="disabled">Disabled</Button>
 </div>`;
 </script>
 

@@ -32,13 +32,12 @@
       >
     </div>
   </div>
-  <div class="w-full p-4">
-    <main>
-      <slot />
-    </main>
+  <div class="w-full pl-4 py-4 h-full overflow-y-hidden">
+    <slot />
   </div>
 </div>
 
+<!--TODO Create Nav control for consumption here-->
 <style global lang="postcss">
   /* only apply purgecss on utilities, per Tailwind docs */
   /* purgecss start ignore */

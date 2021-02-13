@@ -32,7 +32,7 @@
   let icon: string = '';
   $: {
     button = buttons[variant]?.style || '';
-    icon = button[variant]?.icon || '';
+    icon = buttons[variant]?.icon || '';
   }
 </script>
 

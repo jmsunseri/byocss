@@ -17,5 +17,5 @@
       <Trash size="1.5rem" />
     </span>
   </Button>
-  <Button disabled style="disabled">Disabled</Button>
+  <Button disabled variant="disabled">Disabled</Button>
 </div>

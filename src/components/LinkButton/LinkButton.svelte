@@ -27,7 +27,7 @@
 </script>
 
 <script lang="ts">
-  export let style: string = 'default';
+  export let variant: string = 'default';
   export let css: string = '';
   export let href: string = '';
   export let disabled: boolean = false;
@@ -36,8 +36,8 @@
   let icon: string = '';
 
   $: {
-    linkButton = linkButtons[style]?.style || '';
-    icon = linkButton[style]?.icon || '';
+    linkButton = linkButtons[variant]?.style || '';
+    icon = linkButton[variant]?.icon || '';
   }
 </script>
 

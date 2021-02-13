@@ -21,11 +21,11 @@
 </script>
 
 <script lang="ts">
-  export let style: string = 'default';
+  export let variant: string = 'default';
   export let css: string = '';
   let text: string = '';
   $: {
-    text = texts[style] || '';
+    text = texts[variant] || '';
   }
 </script>
 

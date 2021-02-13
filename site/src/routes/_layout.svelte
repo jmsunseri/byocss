@@ -22,12 +22,12 @@
     <div class="flex flex-col pl-4">
       <LinkButton
         href="/button"
-        style={$page.path === '/button' ? 'active' : 'default'}
+        variant={$page.path === '/button' ? 'active' : 'default'}
         >Button</LinkButton
       >
       <LinkButton
         href="/link-button"
-        style={$page.path === '/link-button' ? 'active' : 'default'}
+        variant={$page.path === '/link-button' ? 'active' : 'default'}
         >Link Button</LinkButton
       >
     </div>

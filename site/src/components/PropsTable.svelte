@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex flex-col">
-  <Text style="subHeader">Props</Text>
+  <Text variant="subHeader">Props</Text>
   <div class="grid grid-cols-1 divide-y divide-gray-300">
     <div class="grid grid-cols-5">
       <div class="text-lg font-semibold">Name</div>

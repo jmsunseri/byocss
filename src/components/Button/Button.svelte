@@ -25,14 +25,14 @@
 </script>
 
 <script lang="ts">
-  export let style: string = 'default';
+  export let variant: string = 'default';
   export let css: string = '';
   export let disabled: boolean = false;
   let button: string = '';
   let icon: string = '';
   $: {
-    button = buttons[style]?.style || '';
-    icon = button[style]?.icon || '';
+    button = buttons[variant]?.style || '';
+    icon = button[variant]?.icon || '';
   }
 </script>
 

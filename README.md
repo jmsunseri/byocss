@@ -5,7 +5,7 @@ This Svelte component library is one that intends to be as unopinionated as poss
 You start off by defining a theme file.
 
 ```javascript
-const primaryButton = {
+const defaultButton = {
   style: {
     misc: 'btn focus:outline-none',
     background: 'bg-red-500 hover:bg-red-400',
@@ -18,12 +18,12 @@ const primaryButton = {
 
 const theme = {
   buttons: {
-    primary: {
-      ...primaryButton,
+    default: {
+      ...defaultButton,
       icon: {},
     },
-    primaryDense: {
-      ...primaryButton,
+    dense: {
+      ...defaultButton,
       spacing: 'p-1',
       icon: {},
     },
@@ -33,19 +33,19 @@ const theme = {
 export default theme;
 ```
 
-In this example we defined two button styles, primary and primaryDense. In your app we can now do this.
+In this example we defined two button styles, default and dense. In your app we can now do this.
 
 ```html
-<button style="primary">I'm a Button</button>
-<button style="primaryDense">I'm a Dense Button</button>
+<button>I'm a Button</button>
+<button variant="dense">I'm a Dense Button</button>
 ```
 
-The structure of the primary or primaryDense button objects is not really consequential. So long as some point the object ends up being a string
+The structure of the default or dense button objects is not consequential. So long as some point the object ends up being a string.
 
 ```javascript
 const theme = {
   buttons: {
-    primary: {
+    default: {
       style:
         'btn focus:outline-none bg-red-500 hover:bg-red-400 rounded-md boder-red-700 px-4 py-2 text-white shadow-md',
     },
@@ -58,7 +58,7 @@ or
 ```javascript
 const theme = {
   buttons: {
-    primary: {
+    default: {
       blah: [
         'btn',
         'focus:outline-none',
@@ -98,9 +98,16 @@ For everyone else, `npm run build` will bundle your component's source code into
 
 Make your changes to components or add new components in the `src` directory.
 
+At some point before you want to make your first commit you need to run
+
+````bash
+husky install
+``
+
 ```bash
+yarn install
 yarn build
-```
+````
 
 Then
 

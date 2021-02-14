@@ -1,5 +1,5 @@
 import Button from '../Button.svelte';
-import ButtonSlotTest from './ButtonSlotTest.svelte';
+import ButtonSlotTest from './ButtonSlotTest.mock.svelte';
 import { render, fireEvent } from '@testing-library/svelte';
 import { theme } from '../../../store';
 

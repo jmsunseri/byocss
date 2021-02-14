@@ -10,4 +10,5 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'ts', 'svelte'],
   setupFilesAfterEnv: ['./jest-setup.ts'],
+  coveragePathIgnorePatterns: ['.mock.svelte'],
 };

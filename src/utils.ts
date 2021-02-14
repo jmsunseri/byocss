@@ -10,25 +10,26 @@ const toStyle = (theme?: object | string): string => {
         .join(' ')
         .trim();
     } else {
-      return Object.keys(theme).reduce((styles: string, key: string) => {
-        const type = typeof theme[key];
-        switch (type) {
-          case 'string':
-            return `${styles} ${theme[key]}`.trim();
-          case 'object':
-            if (Array.isArray(theme[key])) {
-              return `${styles} ${theme[key]
-                .map((x) => toStyle(x))
-                .join(' ')}`.trim();
-            } else {
-              return `${styles} ${toStyle(theme[key])}`.trim();
-            }
-          default:
-            return styles;
-        }
-      }, '');
+      return Object.keys(theme)
+        .reduce((styles: string, key: string) => {
+          const type = typeof theme[key];
+          switch (type) {
+            case 'string':
+              return `${styles} ${theme[key].trim()}`;
+            case 'object':
+              if (Array.isArray(theme[key])) {
+                return `${styles} ${theme[key]
+                  .map((x) => toStyle(x))
+                  .join(' ')}`;
+              } else {
+                return `${styles} ${toStyle(theme[key])}`;
+              }
+            default:
+              return styles;
+          }
+        }, '')
+        .trim();
     }
-    return '';
   }
 };
 

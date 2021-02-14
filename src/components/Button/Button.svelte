@@ -36,15 +36,21 @@
   }
 </script>
 
-<button class={`${button} ${css}`.trim()} {disabled} on:click>
+<button
+  type="submit"
+  data-testid="button"
+  class={`${button} ${css}`.trim()}
+  {disabled}
+  on:click
+>
   {#if $$slots.icon}
-    <span class={icon}>
+    <span data-testid="button-icon" class={icon}>
       <slot name="icon" />
     </span>
   {/if}
   <slot />
   {#if $$slots.trailingIcon}
-    <span class={icon}>
+    <span data-testid="button-trailing-icon" class={icon}>
       <slot name="trailingIcon" />
     </span>
   {/if}

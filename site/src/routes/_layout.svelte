@@ -18,7 +18,7 @@
     BYOCSS (Bring Your Own CSS) Svelte Components
   </LinkButton>
 
-  <LinkButton href="https://jmsunseri.github.io/byocss/" variant="header">
+  <LinkButton href="https://github.com/jmsunseri/byocss" variant="header">
     <BrandGithub size="1.5rem" />
   </LinkButton>
 </div>

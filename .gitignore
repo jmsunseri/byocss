@@ -2,4 +2,4 @@
 node_modules
 /dist/
 /coverage/
-site/static/tailwind.css
+/site/static/tailwind.css

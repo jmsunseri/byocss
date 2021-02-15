@@ -1,0 +1,22 @@
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <base href=/byocss/ > <link href=global.css rel=stylesheet> <link href=tailwind.css rel=stylesheet> <link href=manifest.json rel=manifest crossorigin=use-credentials> <link href=favicon.png rel=icon type=image/png> <script>__SAPPER__={baseUrl:"/byocss",preloaded:[void 0,{}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/byocss/service-worker.js');(function(){try{eval("async function x(){}");var main="/byocss/client/client.13818f52.js"}catch(e){main="/byocss/client/legacy/client.31477d7a.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/byocss/client/shimport@2.0.4.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-5a9ccfee.css rel=stylesheet> <link href=/byocss/client/client.13818f52.js rel=modulepreload as=script crossorigin=use-credentials><link href=/byocss/client/client-5a9ccfee.css rel=preload as=style><link href=/byocss/client/index.e87f1914.js rel=modulepreload as=script crossorigin=use-credentials><link href=/byocss/client/inject_styles.5607aec6.js rel=modulepreload as=script crossorigin=use-credentials></head> <body> <div class="h-screen overflow-y-hidden" id=sapper> <div class="flex flex-row py-2 bg-white justify-between px-8 shadow sticky text-2xl top-0"><a href=./ >BYOCSS (Bring Your Own CSS) Svelte Components</a></div> <div class="flex flex-row h-screen"><div class="text-white bg-gray-600 flex-col hidden md:flex p-4 w-80">Components: <div class="flex flex-col pl-4"><a href=./button class="text-white hover:text-blue-300"> Button </a> <a href=./link-button class="text-white hover:text-blue-300"> Link Button </a></div></div> <div class="overflow-y-hidden h-full pl-4 py-4 w-full"><div class="flex flex-col container gap-4 mx-auto"><p>Hi there welcome to BYOCSS Svelte component library. The goal of this project is to provide you with a functional set of components that allows you to style them as you see fit using any means necessary. This website uses tailwind but you are free to use any css library or define your own classes. Then you use a json config file to inject those classes into the templates </p> <p>In the case of the button below we defined a javascript object and populated it with Tailwind CSS class names. </p> <pre><code>const theme = {
+			buttons: {
+				primary: {
+					style: {
+						misc: 'btn focus:outline-none',
+						background: 'bg-red-500 hover:bg-red-400',
+						border: 'rounded-md border-red-700 border-2',
+						spacing: 'px-4 py-2',
+						font: 'text-white',
+						shadow: 'shadow-md',
+					},
+					icon: {},
+				},
+			},
+		};</code></pre> <p>The component library cares that you defined a buttons object and it cares that you defined an icon property. The icon property will be used if you put an icon in the icon slot of the component. If you don't like this structure that's ok you could just as easily do this. </p> <pre><code>const theme = {
+			buttons: {
+				primary: {
+					style: 'btn focus:outline-none bg-red-500 hover:bg-red-400 rounded-md border-red-700 border-2 px-4 py-2 text-white shadow-md',
+					icon: {}
+				},
+			},
+		};</code></pre> <p>It doesn't matter to me. I will take the classes and apply them as needed to the component </p> <pre><code>&lt;Button style="default" >I'm a Button&lt;/Button></code></pre> <div class=flex><button class="flex flex-row py-2 bg-red-500 boder-red-700 btn focus:outline-none gap-1 hover:bg-red-400 items-center px-4 rounded-md shadow-md text-white"> I'm a Button </button></div></div></div></div> </div> 

@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
   import { theme as themeStore, LinkButton } from 'byocss';
+  import { BrandGithub } from 'tabler-icons-svelte';
   import theme from '../byocss.config';
   themeStore.set(theme);
 </script>
@@ -11,9 +12,15 @@
 
 <!--TODO Create Nav control for consumption here-->
 <div
-  class="shadow px-8 py-2 flex flex-row text-2xl justify-between sticky top-0 bg-white"
+  class="shadow px-8 py-2 flex flex-row text-2xl justify-between sticky top-0 bg-white items-center"
 >
-  BYOCSS (Bring Your Own CSS) Svelte Components
+  <LinkButton href="./" variant="header">
+    BYOCSS (Bring Your Own CSS) Svelte Components
+  </LinkButton>
+
+  <LinkButton href="https://jmsunseri.github.io/byocss/" variant="header">
+    <BrandGithub size="1.5rem" />
+  </LinkButton>
 </div>
 
 <div class="h-screen flex flex-row">
@@ -21,12 +28,12 @@
     Components:
     <div class="flex flex-col pl-4">
       <LinkButton
-        href="/button"
+        href="./button"
         variant={$page.path === '/button' ? 'active' : 'default'}
         >Button</LinkButton
       >
       <LinkButton
-        href="/link-button"
+        href="./link-button"
         variant={$page.path === '/link-button' ? 'active' : 'default'}
         >Link Button</LinkButton
       >

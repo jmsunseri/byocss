@@ -60,14 +60,18 @@
   ];
 
   let exampleHTML: string = `<div class="flex flex-row gap-3">
-  <Button variant="example-default">No Icon</Button>
+  <Button variant="example-default" on:click={() => alert('Clicked')}
+    >No Icon</Button
+  >
   <Button variant="example-alt">
     Save
     <span slot="trailingIcon">
       <DeviceFloppy size="1.5rem" />
     </span>
   </Button>
-  <Button disabled variant="example-disabled">Disabled</Button>
+  <Button disabled variant="example-disabled" on:click={() => alert('Clicked')}
+    >Disabled</Button
+  >
   <div class="flex flex-col justify-end">
     <Button variant="example-dense">
       Dense

@@ -61,13 +61,16 @@ const theme: ITheme = {
   },
   linkButtons: {
     default: { style: 'text-white hover:text-blue-300' },
+    header: { style: 'text-gray-700 hover:text-blue-400' },
     active: { style: 'text-green-300' },
   },
   texts: {
-    default: '',
+    default: 'text-gray-700',
     header: 'text-4xl font-semibold text-gray-500',
     subHeader: 'text-2xl font-semibold text-gray-500 my-3',
     caption: 'text-xs text-gray-500',
+    'code-block':
+      'border-gray-300 rounded-md border bg-gray-100 flex flex-col font-mono p-2 whitespace-pre overflow-auto',
   },
 };
 

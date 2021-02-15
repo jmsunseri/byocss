@@ -6,10 +6,11 @@
     "dev": "sapper dev",
     "watch:tailwind": "postcss static/global.css -o static/tailwind.css -w",
     "build:tailwind": "NODE_ENV=production postcss static/global.css -o static/tailwind.css",
-    "build": "npm run build:tailwind && sapper build --legacy",
-    "export": "sapper export --legacy",
+    "build": "yarn build:tailwind && sapper build --legacy",
     "start": "node __sapper__/build",
-    "validate": "svelte-check --ignore src/node_modules/@sapper"
+    "validate": "svelte-check --ignore src/node_modules/@sapper",
+    "export": "sapper export --basepath byocss --legacy",
+    "deploy": "yarn export &&  gh-pages -d __sapper__/export/byocss"
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -45,7 +46,8 @@
     "autoprefixer": "^10.2.4",
     "postcss-cli": "^8.3.1",
     "@fullhuman/postcss-purgecss": "^4.0.0",
-    "tabler-icons-svelte": "^1.6.0"
+    "tabler-icons-svelte": "^1.6.0",
+    "gh-pages": "3.1.0"
   },
   "peerDependencies": {
     "autoprefixer": "^10.2.4"

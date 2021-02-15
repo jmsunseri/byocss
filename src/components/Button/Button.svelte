@@ -31,8 +31,22 @@
   let button: string = '';
   let icon: string = '';
   $: {
-    button = buttons[variant]?.style || '';
-    icon = buttons[variant]?.icon || '';
+    if (disabled) {
+      console.log('disabled');
+      if (buttons[`${variant}-disabled`]) {
+        button = buttons[`${variant}-disabled`]?.style || '';
+        icon = buttons[`${variant}-disabled`]?.icon || '';
+      } else if (buttons['disabled']) {
+        button = buttons['disabled']?.style || '';
+        icon = buttons['disabled']?.icon || '';
+      } else {
+        button = buttons[variant]?.style || '';
+        icon = buttons[variant]?.icon || '';
+      }
+    } else {
+      button = buttons[variant]?.style || '';
+      icon = buttons[variant]?.icon || '';
+    }
   }
 </script>
 

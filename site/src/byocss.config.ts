@@ -34,7 +34,7 @@ const theme: ITheme = {
         background: 'bg-gray-100',
       },
     },
-    'example-disabled': {
+    'example-default-disabled': {
       style: {
         ...examplePrimaryButton,
         background: 'bg-gray-400',

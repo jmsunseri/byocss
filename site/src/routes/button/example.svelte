@@ -13,7 +13,7 @@
       <DeviceFloppy size="1.5rem" />
     </span>
   </Button>
-  <Button disabled variant="example-disabled" on:click={() => alert('Clicked')}
+  <Button disabled variant="example-default" on:click={() => alert('Clicked')}
     >Disabled</Button
   >
   <div class="flex flex-col justify-end">

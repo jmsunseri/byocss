@@ -1,6 +1,6 @@
-<script context="module" lang="ts">
+<script lang="ts" context="module">
   import { theme as themeStore } from '../../store';
-  import { toStyle } from '../../utils';
+  import { toStyle, getDisabledVariant } from '../../utils';
   type ButtonCollection = { [key: string]: { style: string; icon: string } };
 
   // according to the documentation this module will only be evaluated once when the component is initialized
@@ -32,17 +32,9 @@
   let icon: string = '';
   $: {
     if (disabled) {
-      console.log('disabled');
-      if (buttons[`${variant}-disabled`]) {
-        button = buttons[`${variant}-disabled`]?.style || '';
-        icon = buttons[`${variant}-disabled`]?.icon || '';
-      } else if (buttons['disabled']) {
-        button = buttons['disabled']?.style || '';
-        icon = buttons['disabled']?.icon || '';
-      } else {
-        button = buttons[variant]?.style || '';
-        icon = buttons[variant]?.icon || '';
-      }
+      const v = getDisabledVariant(buttons, variant);
+      button = v?.style || '';
+      icon = v?.icon || '';
     } else {
       button = buttons[variant]?.style || '';
       icon = buttons[variant]?.icon || '';

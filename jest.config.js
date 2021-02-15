@@ -9,7 +9,7 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
   },
   moduleFileExtensions: ['js', 'ts', 'svelte'],
-  setupFilesAfterEnv: ['./jest-setup.ts'],
+  setupFilesAfterEnv: ['./src/jest-setup.ts'],
   coveragePathIgnorePatterns: ['.mock.svelte'],
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
 };

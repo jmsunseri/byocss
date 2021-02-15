@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script lang="ts" context="module">
   import { theme as themeStore } from '../../store';
   import { toStyle } from '../../utils';
   type LinkButtonCollection = {

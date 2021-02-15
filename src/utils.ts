@@ -33,4 +33,17 @@ const toStyle = (theme?: object | string): string => {
   }
 };
 
-export { toStyle };
+const getDisabledVariant = (
+  themeCollection: { [key: string]: object },
+  variant: string
+): any => {
+  if (themeCollection[`${variant}-disabled`]) {
+    return themeCollection[`${variant}-disabled`];
+  } else if (themeCollection['disabled']) {
+    return themeCollection['disabled'];
+  } else {
+    return themeCollection[variant];
+  }
+};
+
+export { toStyle, getDisabledVariant };

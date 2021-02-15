@@ -21,6 +21,13 @@
         'Extra css classes you would like to have applied to the main button component.',
     },
     {
+      name: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description:
+        'Will disable the button and prevent click events from firing.  When disabled the component will look for a variant either called "{variant}-disabled" or "disabled"',
+    },
+    {
       name: 'on:click',
       type: 'VoidFunction',
       description: 'A function that will be called on click of the button.',

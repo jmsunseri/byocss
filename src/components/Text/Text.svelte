@@ -29,6 +29,6 @@
   }
 </script>
 
-<span class={`${text} ${css}`.trim()}>
+<span class={`${text} ${css}`.trim()} data-testid="text">
   <slot />
 </span>

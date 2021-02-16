@@ -63,6 +63,10 @@ const theme: ITheme = {
     default: { style: 'text-white hover:text-blue-300' },
     header: { style: 'text-gray-700 hover:text-blue-400' },
     active: { style: 'text-green-300' },
+    'example-default': {
+      style: 'text-blue-500 hover:bg-blue-300 flex flex-row gap-1',
+    },
+    'example-default-disabled': { style: 'text-gray-300 cursor-not-allowed' },
   },
   texts: {
     default: 'text-gray-700',
@@ -71,6 +75,10 @@ const theme: ITheme = {
     caption: 'text-xs text-gray-500',
     'code-block':
       'border-gray-300 rounded-md border bg-gray-100 flex flex-col font-mono p-2 whitespace-pre overflow-auto',
+    'example-header': 'text-4xl font-bold',
+    'example-caption': 'text-xs',
+    'example-code':
+      'rounded-md bg-blue-800 flex flex-col font-mono p-1 whitespace-pre text-red-50',
   },
 };
 

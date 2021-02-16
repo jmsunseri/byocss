@@ -30,13 +30,21 @@
       <LinkButton
         href="./button"
         variant={$page.path === '/button' ? 'active' : 'default'}
-        >Button</LinkButton
       >
+        Button
+      </LinkButton>
       <LinkButton
         href="./link-button"
         variant={$page.path === '/link-button' ? 'active' : 'default'}
-        >Link Button</LinkButton
       >
+        Link Button
+      </LinkButton>
+      <LinkButton
+        href="./text"
+        variant={$page.path === '/text' ? 'active' : 'default'}
+      >
+        Text
+      </LinkButton>
     </div>
   </div>
   <div class="w-full pl-4 py-4 h-full overflow-y-hidden">

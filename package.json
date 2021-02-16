@@ -8,7 +8,7 @@
     "prebuild": "rm -rf ./dist",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "validate": "svelte-check",
+    "validate": "svelte-check --compiler-warnings \"module-script-reactive-declaration:ignore\"",
     "prepublishOnly": "build",
     "test": "jest src"
   },

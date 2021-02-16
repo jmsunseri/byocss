@@ -15,5 +15,8 @@
         "titleBar.inactiveBackground": "#3c4a7899",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#3c4a78"
+    "peacock.color": "#3c4a78",
+    "svelte.plugin.svelte.compilerWarnings": {
+        "module-script-reactive-declaration": "ignore"
+    }
 }

@@ -35,13 +35,15 @@
   let linkButton: string = '';
   let icon: string = '';
 
-  if (disabled) {
-    const v = getDisabledVariant(linkButtons, variant);
-    linkButton = v?.style || '';
-    icon = v?.icon || '';
-  } else {
-    linkButton = linkButtons[variant]?.style || '';
-    icon = linkButtons[variant]?.icon || '';
+  $: {
+    if (disabled) {
+      const v = getDisabledVariant(linkButtons, variant);
+      linkButton = v?.style || '';
+      icon = v?.icon || '';
+    } else {
+      linkButton = linkButtons[variant]?.style || '';
+      icon = linkButtons[variant]?.icon || '';
+    }
   }
 </script>
 

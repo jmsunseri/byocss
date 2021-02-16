@@ -60,9 +60,9 @@ const theme: ITheme = {
     },
   },
   linkButtons: {
-    default: { style: 'text-white hover:text-blue-300' },
+    default: { style: 'text-white hover:text-blue-400' },
     header: { style: 'text-gray-700 hover:text-blue-400' },
-    active: { style: 'text-green-300' },
+    active: { style: 'text-green-400' },
     'example-default': {
       style: 'text-blue-500 hover:bg-blue-300 flex flex-row gap-1',
     },

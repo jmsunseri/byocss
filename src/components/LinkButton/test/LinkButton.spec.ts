@@ -2,6 +2,7 @@ import LinkButton from '../LinkButton.svelte';
 import LinkButtonSlotTest from './LinkButtonSlotTest.mock.svelte';
 import { render, fireEvent } from '@testing-library/svelte';
 import { theme } from '../../../store';
+import { tick } from 'svelte';
 
 beforeAll(() => {
   theme.set({
@@ -146,4 +147,24 @@ test('creates trailing icon slot', () => {
   expect(buttonIcon).toBeTruthy();
   expect(buttonIcon).toHaveClass('foo');
   expect(buttonIcon).toHaveTextContent('Blah');
+});
+
+test('switch from default style to disabled', async () => {
+  const { getByTestId, component } = render(LinkButton);
+  const button = getByTestId('link-button');
+  expect(button).toHaveClass('bar');
+
+  component.$set({ disabled: true });
+  await tick();
+  expect(button).toHaveClass('disabled-style');
+});
+
+test('switch from default style to variant-1', async () => {
+  const { getByTestId, component } = render(LinkButton);
+  const button = getByTestId('link-button');
+  expect(button).toHaveClass('bar');
+
+  component.$set({ variant: 'variant-1' });
+  await tick();
+  expect(button).toHaveClass('variant-style');
 });

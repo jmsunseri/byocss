@@ -2,6 +2,7 @@ import Button from '../Button.svelte';
 import ButtonSlotTest from './ButtonSlotTest.mock.svelte';
 import { render, fireEvent } from '@testing-library/svelte';
 import { theme } from '../../../store';
+import { tick } from 'svelte';
 
 beforeAll(() => {
   theme.set({
@@ -12,6 +13,13 @@ beforeAll(() => {
       },
       'variant-1': {
         style: 'variant-style',
+        icon: 'bar',
+      },
+      disabled: {
+        something: 'dis',
+      },
+      'variant-1-disabled': {
+        style: 'variant-style-disabled',
         icon: 'bar',
       },
     },
@@ -70,12 +78,23 @@ test('does disabled work', () => {
   });
   const button = getByTestId('button');
   expect(button).toBeDisabled();
+  expect(button).toHaveClass('dis');
 });
 
 test('default style applied', () => {
   const { getByTestId } = render(Button);
   const button = getByTestId('button');
   expect(button).toHaveClass('bar');
+});
+
+test('switch from default style to disabled', async () => {
+  const { getByTestId, component } = render(Button);
+  const button = getByTestId('button');
+  expect(button).toHaveClass('bar');
+
+  component.$set({ disabled: true });
+  await tick();
+  expect(button).toHaveClass('dis');
 });
 
 test('default + css prop style applied', () => {
@@ -87,10 +106,24 @@ test('default + css prop style applied', () => {
 });
 
 test('apply variant style applied and not default', () => {
-  const { getByTestId } = render(Button, { variant: 'variant-1' });
+  const { getByTestId } = render(Button, {
+    variant: 'variant-1',
+  });
   const button = getByTestId('button');
   expect(button).toHaveClass('variant-style');
   expect(button).not.toHaveClass('bar');
+});
+
+test('apply disabled variant style and not variant or default disabled', () => {
+  const { getByTestId } = render(Button, {
+    variant: 'variant-1',
+    disabled: true,
+  });
+  const button = getByTestId('button');
+  expect(button).not.toHaveClass('variant-style');
+  expect(button).not.toHaveClass('bar');
+  expect(button).not.toHaveClass('dis');
+  expect(button).toHaveClass('variant-style-disabled');
 });
 
 test('applying non existant style', () => {
@@ -120,4 +153,14 @@ test('creates trailing icon slot', () => {
   expect(buttonIcon).toBeTruthy();
   expect(buttonIcon).toHaveClass('foo');
   expect(buttonIcon).toHaveTextContent('Blah');
+});
+
+test('switch from default style to variant-1', async () => {
+  const { getByTestId, component } = render(Button);
+  const button = getByTestId('button');
+  expect(button).toHaveClass('bar');
+
+  component.$set({ variant: 'variant-1' });
+  await tick();
+  expect(button).toHaveClass('variant-style');
 });

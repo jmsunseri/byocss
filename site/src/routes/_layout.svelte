@@ -6,8 +6,7 @@
 </script>
 
 <script lang="ts">
-  import { stores } from '@sapper/app';
-  const { page } = stores();
+  import SideNavLink from '../components/SideNavLink.svelte';
 </script>
 
 <!--TODO Create Nav control for consumption here-->
@@ -27,24 +26,9 @@
   <div class="w-80 text-white md:flex hidden bg-gray-600 p-4 flex-col">
     Components:
     <div class="flex flex-col pl-4">
-      <LinkButton
-        href="./button"
-        variant={$page.path === '/button' ? 'active' : 'default'}
-      >
-        Button
-      </LinkButton>
-      <LinkButton
-        href="./link-button"
-        variant={$page.path === '/link-button' ? 'active' : 'default'}
-      >
-        Link Button
-      </LinkButton>
-      <LinkButton
-        href="./text"
-        variant={$page.path === '/text' ? 'active' : 'default'}
-      >
-        Text
-      </LinkButton>
+      <SideNavLink path="button" label="Button" />
+      <SideNavLink path="link-button" label="Link Button" />
+      <SideNavLink path="text" label="Text" />
     </div>
   </div>
   <div class="w-full pl-4 py-4 h-full overflow-y-hidden">
